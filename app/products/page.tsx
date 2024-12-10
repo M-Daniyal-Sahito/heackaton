@@ -4,7 +4,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import Image from "next/image";
 
-export const allProducts = [
+ const allProducts = [
   { id: 1, name: "Running Shoes", price: "₹ 2,500", image: "/s1.png", category: "Shoes" },
   { id: 2, name: "Basketball Sneakers", price: "₹ 5,000", image: "/s2.png", category: "Shoes" },
   { id: 3, name: "Casual Sneakers", price: "₹ 3,500", image: "/s3.png", category: "Shoes" },
