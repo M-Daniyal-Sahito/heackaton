@@ -65,7 +65,7 @@ const ContactUs = () => {
               </li>
               <li>
                 <p><strong>Email Support:</strong> support@nike.com</p>
-                <p>We'll reply within five business days</p>
+                <p>We&apos;ll reply within five business days</p> {/* Fixed apostrophe */}
               </li>
               <li>
                 <p><strong>Store Locator:</strong> Find Nike retail stores near you</p>
