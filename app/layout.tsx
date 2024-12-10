@@ -1,13 +1,12 @@
-import { CartProvider } from "./context/CartContext";
+
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head />
       <body>
-        <CartProvider>
-          {children}
-        </CartProvider>
+        {children}
       </body>
     </html>
   );
