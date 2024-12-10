@@ -55,7 +55,7 @@ const Content = () => {
               <Image className="w-full h-auto rounded-lg" src={`/${img}`} alt="Nike Air Max Pulse" width={370} height={370} />
               <div className="mt-4 text-center">
                 <p className="font-bold">Nike Air Max Pulse</p>
-                <p className="text-gray-700 text-sm">Men's Shoes</p>
+                <p className="text-gray-700 text-sm">Men&apos;s Shoes</p>
                 <p className="font-bold text-gray-900 text-lg mt-2">Price: $300</p>
               </div>
             </div>
@@ -97,7 +97,7 @@ const Content = () => {
                   height={250}
                 />
                 <h3 className="mt-4 text-lg font-bold">Nike Dri-FIT ADV TechKnit Ultra</h3>
-                <p className="text-gray-600 text-sm">Men's Short-Sleeve Running Top</p>
+                <p className="text-gray-600 text-sm">Men&apos;s Short-Sleeve Running Top</p>
                 <p className="mt-2 text-xl font-bold">₹ 3,895</p>
               </div>
             ))}
@@ -107,7 +107,7 @@ const Content = () => {
         {/* Don't Miss Section */}
         <div className="bg-white py-10">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold">Don't Miss</h2>
+            <h2 className="text-2xl font-bold">Don&apos;t Miss</h2>
             <Image
               src="/h10.png"
               alt="Full model"
@@ -142,7 +142,7 @@ const Content = () => {
                   height={250}
                 />
                 <div className="absolute bottom-3 left-3 bg-white text-black py-1 px-3 text-sm rounded-full">
-                  {index === 0 ? "Men's" : index === 1 ? "Women's" : "Kids'"}
+                  {index === 0 ? "Men&apos;s" : index === 1 ? "Women&apos;s" : "Kids&apos;"}
                 </div>
               </div>
             ))}
@@ -178,21 +178,22 @@ const Content = () => {
                 <li className="mb-2">All Clothing</li>
                 <li className="mb-2">Modest Wear</li>
                 <li className="mb-2">Hoodies & Pullovers</li>
-                <li className="mb-2">Shirts & Tops</li>
+                <li className="mb-2">Activewear</li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-4">Kids'</h3>
+              <h3 className="font-bold text-lg mb-4">Accessories</h3>
               <ul>
-                <li className="mb-2">Infant & Toddler Shoes</li>
-                <li className="mb-2">Kids' Shoes</li>
-                <li className="mb-2">Kids' Jordan Shoes</li>
-                <li className="mb-2">Kids' Basketball Shoes</li>
+                <li className="mb-2">Socks & Tights</li>
+                <li className="mb-2">Bags</li>
+                <li className="mb-2">Backpacks</li>
+                <li className="mb-2">Hats</li>
               </ul>
             </div>
           </div>
         </div>
+
       </div>
     </>
   );
