@@ -73,8 +73,8 @@ export default function AllProduct() {
         <div
           className={`bg-white shadow-lg transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 z-20 md:relative md:translate-x-0 md:w-[250px]`}
         >
-          <h2 className="font-bold text-lg p-4">Categories</h2>
-          <ul className="space-y-2 px-4">
+          <h2 className="font-bold text-3xl p-4">Categories</h2>
+          <ul className="space-y-2 px-4 text-2xl">
             {categories.map((category) => (
               <li
                 key={category}
@@ -110,7 +110,7 @@ export default function AllProduct() {
         )}
 
         {/* Products Section */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-4">
+        <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-4">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className="border rounded-md p-4 flex flex-col items-center">

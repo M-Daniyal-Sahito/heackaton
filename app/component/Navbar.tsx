@@ -1,54 +1,79 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = (url: string | URL | undefined) => {
+    setIsMenuOpen(false); // Close menu on link click
+    window.open(url, "_blank"); // Open the link
+  };
+
   return (
     <>
-      {/* All navbar bg */}
-      <div className="h-[96px] w-[1125px] bg-white mt-[10px] m-auto">
+      {/* All Navbar */}
+      <div className="w-[1120px] m-auto bg-white mt-2 shadow-md">
         {/* Top Navbar */}
-        <div className="h-[36px] w-[1120px] bg-[#F5F5F5] flex justify-between items-center">
+        <div className="h-12 bg-gray-100 flex justify-between items-center px-4 sm:px-8 lg:max-w-[1120px] lg:m-auto">
           {/* Logo on Left */}
-          <Image className="h-[30px] ml-[10px]" src="/image1.png" alt="logo" width={80} height={30} />
+          <Image
+            className="h-8"
+            src="/image1.png"
+            alt="logo"
+            width={80}
+            height={30}
+          />
 
           {/* Right side Text Links */}
-          <div className="flex gap-[25px] mr-[10px] text-black items-center font-bold">
+          <div className="hidden sm:flex gap-6 text-black items-center font-bold">
             <li
-              className="list-none cursor-pointer font-arial text-[11px]"
-              onClick={() =>
-                window.open("https://www.nike.com/retail", "_blank")
-              }
+              className="list-none cursor-pointer font-arial text-xl"
+              onClick={() => handleLinkClick("https://www.nike.com/retail")}
             >
               Find Store
             </li>
             <li
-              className="list-none cursor-pointer font-arial text-[11px]"
-              onClick={() => window.open("https://www.nike.com/help", "_blank")}
+              className="list-none cursor-pointer font-arial text-xl"
+              onClick={() => handleLinkClick("https://www.nike.com/help")}
             >
               Help
             </li>
             <li
-              className="list-none cursor-pointer font-arial text-[11px]"
-              onClick={() => window.open("/joinus", "_blank")} // Custom route for Next.js
+              className="list-none cursor-pointer font-arial text-xl"
+              onClick={() => handleLinkClick("/joinus")}
             >
               Join Us
             </li>
             <li
-              className="list-none cursor-pointer font-arial text-[11px]"
-              onClick={() => window.open("/Singin", "_blank")}
+              className="list-none cursor-pointer font-arial text-xl"
+              onClick={() => handleLinkClick("/Singin")}
             >
-              Sign Up
+              Sign In
             </li>
+          </div>
+
+          {/* Hamburger Menu */}
+          <div
+            className="sm:hidden cursor-pointer"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Image
+              src="/burger-bar.png"
+              alt="Menu"
+              width={30}
+              height={30}
+              className="h-8 w-8"
+            />
           </div>
         </div>
 
         {/* Bottom Navbar */}
-        <div className="h-[60px] w-[1120px] flex items-center">
+        <div className="h-14 flex items-center px-4 sm:px-8 lg:max-w-[1120px] lg:m-auto">
           {/* Bottom Logo */}
           <Image
-            onClick={() => window.open("/")}
-            className="h-[40px] ml-[10px] cursor-pointer"
+            onClick={() => handleLinkClick("/")}
+            className="h-10 w-20 cursor-pointer"
             src="/image2.png"
             alt="logo"
             width={80}
@@ -56,47 +81,95 @@ const Navbar = () => {
           />
 
           {/* Text Links */}
-          <div className="flex list-none gap-[20px] ml-[20px] cursor-pointer font-arial font-bold text-[15px] h-full w-[740px] text-black items-center justify-around">
-            <li
-              onClick={() => window.open("/", "_blank")}
-              className="cursor-pointer"
-            >
-              New & Feature
-            </li>
+          <div className="hidden sm:flex list-none gap-6 ml-5 font-arial font-bold text-xl text-black items-center">
+            <li onClick={() => handleLinkClick("/")}>New & Feature</li>
             <li>Men</li>
             <li>Women</li>
             <li>Kids</li>
             <li>Sales</li>
           </div>
-          <input
-            className="h-[40px] w-[180px] bg-[#F5F5F5] rounded-full text-black text-center"
-            type="text"
-            placeholder="Search"
-          />
-          <Image
-            className="h-[40px] w-[40px]"
-            src="/image3.png"
-            alt="search icon"
-            width={40}
-            height={40}
-          />
-          <Image
-            className="h-[35px] w-[35px]"
-            src="/image4.png"
-            alt="heart icon"
-            width={35}
-            height={35}
-          />
-          <Image
-            className="h-[40px] w-[40px]"
-            src="/image5.png"
-            alt="shopping bag icon"
-            width={40}
-            height={40}
-          />
+
+          {/* Search Input */}
+          <div className="hidden sm:flex items-center gap-2 ml-auto">
+            <input
+              className="h-10 w-40 bg-gray-100 rounded-full text-black text-center"
+              type="text"
+              placeholder="Search"
+            />
+            <Image
+              className="h-10 w-10"
+              src="/image3.png"
+              alt="search icon"
+              width={40}
+              height={40}
+            />
+            <Image
+              className="h-9 w-9"
+              src="/image4.png"
+              alt="heart icon"
+              width={35}
+              height={35}
+            />
+            <Image
+              className="h-10 w-10"
+              src="/image5.png"
+              alt="shopping bag icon"
+              width={40}
+              height={40}
+            />
+          </div>
         </div>
 
-        {/* Footer Section */}
+        {/* Dropdown Menu for Mobile */}
+        {isMenuOpen && (
+          <div className="sm:hidden w-full bg-gray-200 p-4 space-y-4">
+            {/* Top Navbar Links */}
+            <li
+              className="list-none cursor-pointer font-arial text-3xl"
+              onClick={() => handleLinkClick("https://www.nike.com/retail")}
+            >
+              Find Store
+            </li>
+            <li
+              className="list-none cursor-pointer font-arial text-3xl"
+              onClick={() => handleLinkClick("https://www.nike.com/help")}
+            >
+              Help
+            </li>
+            <li
+              className="list-none cursor-pointer font-arial text-3xl"
+              onClick={() => handleLinkClick("/joinus")}
+            >
+              Join Us
+            </li>
+            <li
+              className="list-none cursor-pointer font-arial text-3xl"
+              onClick={() => handleLinkClick("/Singin")}
+            >
+              Sign In
+            </li>
+
+            {/* Bottom Navbar Links */}
+            <li
+              className="list-none cursor-pointer font-arial text-3xl"
+              onClick={() => handleLinkClick("/")}
+            >
+              New & Feature
+            </li>
+            <li className="list-none cursor-pointer font-arial text-3xl">
+              Men
+            </li>
+            <li className="list-none cursor-pointer font-arial text-3xl">
+              Women
+            </li>
+            <li className="list-none cursor-pointer font-arial text-3xl">
+              Kids
+            </li>
+            <li className="list-none cursor-pointer font-arial text-3xl">
+              Sales
+            </li>
+          </div>
+        )}
       </div>
     </>
   );

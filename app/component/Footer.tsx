@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       {/* main bg */}
-      <div className="h-auto w-[1120px] mt-3 m-auto bg-black text-white rounded ">
+      <div className="h-auto w-[1120px] mt-3 m-auto bg-black text-white rounded  ">
         <div className="h-14 w-[300px] ml-auto flex gap-8 pt-4 cursor-pointer">
           <Image src="/6.png" alt="Logo 1" width={50} height={50} />
           <Image src="/7.png" alt="Logo 2" width={50} height={50} />
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         {/* textbox right side */}
-        <div className="w-[710px] h-[215px] flex gap-3 ml-6">
+        <div className="w-[710px] h-auto flex gap-4 ml-6  text-3xl">
           {/* right side text 1st */}
           <div className="w-[245px]">
             <p>Find A Store</p>
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
 
           {/* right side text 2nd */}
-          <div className="w-[255px] cursor-pointer">
+          <div className="w-[255px] cursor-pointer mr-3">
             <p onClick={() => window.open("/contactUs", "_blank")}>Get Help</p>
             <p>Order Status</p>
             <p>Delivery</p>
@@ -52,7 +52,7 @@ const Footer = () => {
         {/* bottom icons  */}
         <div className="h-[60px]  w-[1120px] flex items-center  px-5">
           {/* bottom left section */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-xl">
             <ImLocation2 style={{ color: "cyan" }} />
             <p>Pakistan</p>
             <p>© 2023 Nike, Inc. All Rights Reserved</p>
